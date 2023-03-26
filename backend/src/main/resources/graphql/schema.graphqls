@@ -1,0 +1,18 @@
+type Mutation {
+    addCar(carDTO: CarDtoInput): String
+}
+
+type Query {
+    findAllCars: [CarDTO]
+}
+
+input CarDtoInput {
+    name: String!
+    manufacturer: String
+}
+
+type CarDTO {
+    id: ID
+    name: String
+    manufacturer: String
+}
