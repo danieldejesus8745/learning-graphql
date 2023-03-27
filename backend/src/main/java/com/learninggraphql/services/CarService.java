@@ -1,6 +1,6 @@
 package com.learninggraphql.services;
 
-import com.learninggraphql.CarMapper;
+import com.learninggraphql.mappers.CarMapper;
 import com.learninggraphql.dto.CarDTO;
 import com.learninggraphql.entities.Car;
 import com.learninggraphql.repository.CarRepository;
@@ -21,7 +21,7 @@ public class CarService {
     private final CarMapper carMapper;
 
     public void addCar(CarDTO carDTO) {
-        preventDuplicity(carDTO.getName());
+        preventDuplicity(carDTO.getVehicle());
         carRepository.save(carMapper.fromDTO(carDTO));
     }
 
@@ -29,8 +29,8 @@ public class CarService {
         return carMapper.toListDTO(carRepository.findAll());
     }
 
-    private void preventDuplicity(String carName) {
-        Car car = carRepository.findByName(carName).orElse(null);
+    private void preventDuplicity(String vehicle) {
+        Car car = carRepository.findByVehicle(vehicle).orElse(null);
         if (Objects.nonNull(car)) throw new IllegalStateException(MESSAGE_2.getMessage());
     }
 

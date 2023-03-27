@@ -11,7 +11,7 @@ header {
     padding: 50px 0;
 }
 
-header > p {
+header > p > strong {
     font-size: 30pt;
 }
 

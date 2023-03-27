@@ -1,4 +1,4 @@
-package com.learninggraphql;
+package com.learninggraphql.mappers;
 
 import com.learninggraphql.dto.CarDTO;
 import com.learninggraphql.entities.Car;
@@ -12,7 +12,7 @@ public class CarMapper {
 
     public Car fromDTO(CarDTO carDTO) {
         Car car = new Car();
-        car.setName(carDTO.getName());
+        car.setVehicle(carDTO.getVehicle());
         car.setManufacturer(carDTO.getManufacturer());
 
         return car;
@@ -21,7 +21,7 @@ public class CarMapper {
     public CarDTO toDTO(Car car) {
         CarDTO carDTO = new CarDTO();
         carDTO.setId(car.getId());
-        carDTO.setName(car.getName());
+        carDTO.setVehicle(car.getVehicle());
         carDTO.setManufacturer(car.getManufacturer());
 
         return carDTO;

@@ -7,12 +7,12 @@ type Query {
 }
 
 input CarDtoInput {
-    name: String!
+    vehicle: String!
     manufacturer: String
 }
 
 type CarDTO {
     id: ID
-    name: String
+    vehicle: String
     manufacturer: String
 }
